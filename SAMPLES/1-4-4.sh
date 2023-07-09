@@ -3,4 +3,4 @@
 
 awk '/Susie/' DATA/*
 
-	# Finds all lines in any file inside DATA that contains 'Susie'
+	# prints all lines in any file inside the 'DATA' dir that contain the literal string 'Susie'
