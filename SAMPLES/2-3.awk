@@ -2,7 +2,7 @@
 
 
 BEGIN {
-	FS = "\t"    # tab as the field separator
+	FS = "\t"    # tab as the field separator, would specify an alternate separator with this sort of thing
 	printf("%10s %6s %5s    %s\n\n", 
 		"COUNTRY", "AREA", "POP", "CONTINENT" )
 		# it is rather ugly, but you need to include the paranthesis at the end of the print line, or a \ to escape the newline
