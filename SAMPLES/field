@@ -1,0 +1,24 @@
+# copy-paste of the 'field' program from the book
+# use this program on files to print the specified fields, via CLI args
+
+
+awk '
+BEGIN {
+	# collect the numbers --> i.e which fields to print
+	for (i = 1; ARGV[i] ~ /^[0-9]+$/; i++){
+		fld[++nf] = ARGV[i]
+		ARGV[i] = ""
+	}
+	if (i >= ARGC) 
+		ARGV[ARGC++] = "-"
+
+}
+{
+	for (i = 1; i <= nf; i++)
+		printf("%s%s", $fld[i], i, nf ? " " : "\n")
+}
+' $*
+
+
+	# sample usage:
+	# ./SAMPLES/field 1 2 DATA/countries

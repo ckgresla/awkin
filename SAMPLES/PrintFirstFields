@@ -1,0 +1,7 @@
+# a standalone awk executable
+
+
+awk ' { print $1 }' $*
+
+	# we can then call this script (after doing a chmod) on new files like so;
+	# ./SAMPLES/PrintFirstFields DATA/*
