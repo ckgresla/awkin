@@ -1,0 +1,20 @@
+# an example of a command we can make into an executable and use like other unix-y things
+# here we get info about a Country name from the 'DATA/countries' datafile
+#
+# usage: info {country-name}
+
+
+awk '
+BEGIN { FS = "\t" }
+
+$1 ~ /'$1'/ {
+	printf("%s:\n", $1)
+	printf("\t%d million people\n", $3)
+	printf("\t%d million sq. mi.\n", $2/1000)
+	printf("\t%.1f people per sq. mi.\n", 1000*$3/$2)
+}
+' DATA/countries
+
+	# assume we call this exec from the root dir of git repo
+
+
